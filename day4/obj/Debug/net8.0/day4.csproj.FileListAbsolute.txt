@@ -12,3 +12,4 @@
 /Users/ziqyan/Documents/Repo/AdventOfCode/day4/obj/Debug/net8.0/day4.pdb
 /Users/ziqyan/Documents/Repo/AdventOfCode/day4/obj/Debug/net8.0/day4.genruntimeconfig.cache
 /Users/ziqyan/Documents/Repo/AdventOfCode/day4/obj/Debug/net8.0/ref/day4.dll
+/Users/ziqyan/Documents/Repo/AdventOfCode/day4/obj/Debug/net8.0/day4.sourcelink.json
