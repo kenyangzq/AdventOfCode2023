@@ -1,0 +1,15 @@
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/day5.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/day5.AssemblyInfoInputs.cache
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/day5.AssemblyInfo.cs
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/day5.csproj.CoreCompileInputs.cache
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/day5.sourcelink.json
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/bin/Debug/net8.0/day5
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/bin/Debug/net8.0/day5.deps.json
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/bin/Debug/net8.0/day5.runtimeconfig.json
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/bin/Debug/net8.0/day5.dll
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/bin/Debug/net8.0/day5.pdb
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/day5.dll
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/refint/day5.dll
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/day5.pdb
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/day5.genruntimeconfig.cache
+/Users/ziqyan/Documents/Repo/AdventOfCode/day5/obj/Debug/net8.0/ref/day5.dll
