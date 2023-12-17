@@ -2,7 +2,7 @@ using Day10;
 
 public static class Program {
     public static void Main() {
-        List<List<string>> maze = ParseInput("input.txt");
+        List<List<string>> maze = ParseInput("test2.txt");
         if (maze == null) {
             Console.WriteLine("Could not parse input");
             return;
@@ -30,6 +30,10 @@ public static class Program {
                 break;
             }
         }
+
+        // Get the maze with the pipe marked as 1 and rest as 0
+        // goal is to find the area enclosed by 1.
+        var updatedMaze = mazeSolver.GetUpdatedMaze();
     }
 
 
@@ -65,6 +69,7 @@ public static class Program {
 
     private class MazeSolver {
         private List<List<string>> maze;
+        private List<List<string>> cleanedMaze;
         private int mazeWidth;
         private int mazeHeight;
         private int startingRow;
@@ -78,14 +83,20 @@ public static class Program {
             this.mazeHeight = maze.Count;
             this.startingRow = startingRow;
             this.startingCol = startingCol;
-
             this.pipes = PipeHelper.CreatePipes();
+
+            this.cleanedMaze = new List<List<string>>();
+            for (int i = 0; i < this.mazeHeight; i++)
+            {
+                this.cleanedMaze.Add(Enumerable.Repeat("O", mazeWidth).ToList());
+            }
+
+            Console.WriteLine($"Maze width: {mazeWidth}, height: {mazeHeight}");
+            Console.WriteLine($"Cleaned maze width: {cleanedMaze[0].Count}, height: {cleanedMaze.Count}");
         }
 
         public int TryNextMove(int currentRow, int currentCol, Direction dir, int distance)
         {
-            Console.WriteLine($"Trying {dir} from {currentRow}, {currentCol}");
-
             Pipe currentPipe = pipes[maze[currentRow][currentCol]];
             (int nextRow, int nextCol) = PipeHelper.Move(dir, currentRow, currentCol);
 
@@ -94,6 +105,7 @@ public static class Program {
             }
 
             if (nextRow == startingRow && nextCol == startingCol) {
+                cleanedMaze[currentRow][currentCol] = "X";
                 return distance;
             }
 
@@ -108,7 +120,27 @@ public static class Program {
             distance++;
             Direction nextDirection = pipes[nextSymbol].GetNextDirection(dir);
 
-            return TryNextMove(nextRow, nextCol, nextDirection, distance);
+            var result = TryNextMove(nextRow, nextCol, nextDirection, distance);
+
+            if (result > 0) {
+                // find the path. Am on the right path. Mark the pipe location as 1
+                cleanedMaze[currentRow][currentCol] = "X";
+            }
+
+            return result;
+        }
+
+        public List<List<string>> GetUpdatedMaze() {
+            Console.WriteLine();
+            foreach (var row in cleanedMaze)
+            {
+                foreach (var element in row)
+                {
+                    Console.Write(element);
+                }
+                Console.WriteLine();
+            }
+            return cleanedMaze;
         }
     }
 

@@ -1,0 +1,15 @@
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/bin/Debug/net8.0/day16
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/bin/Debug/net8.0/day16.deps.json
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/bin/Debug/net8.0/day16.runtimeconfig.json
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/bin/Debug/net8.0/day16.dll
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/bin/Debug/net8.0/day16.pdb
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/day16.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/day16.AssemblyInfoInputs.cache
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/day16.AssemblyInfo.cs
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/day16.csproj.CoreCompileInputs.cache
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/day16.sourcelink.json
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/day16.dll
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/refint/day16.dll
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/day16.pdb
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/day16.genruntimeconfig.cache
+/Users/ziqyan/Documents/Repo/AdventOfCode/day16/day16/obj/Debug/net8.0/ref/day16.dll
