@@ -12,19 +12,24 @@ public class Program {
         
         // Part 1
         // Count the boundary-connected .s
-        int count = solver.CountBoundaryConnectedDots();
-        solver.PrintGrid();
+        // int count = solver.CountBoundaryConnectedDots();
+        // solver.PrintGrid();
 
-        int answer = (grid.Count * grid[0].Count) - count;
-        Console.WriteLine($"Answer: {answer}");
+        // int answer = (grid.Count * grid[0].Count) - count;
+        // Console.WriteLine($"Answer: {answer}");
 
+        // Part 2
+        var instructions2 = ConvertInput(instructions);
+        var area = CalculateArea(instructions2);
+
+        Console.WriteLine($"Area: {area}");
     }
 
     public enum Direction {
-        R,
-        D,
-        L,
-        U,
+        R = 0,
+        D = 1,
+        L = 2,
+        U = 3,
     }
 
     public static Dictionary<Direction, (int, int)> DirectionMap = new Dictionary<Direction, (int, int)> {
@@ -46,6 +51,19 @@ public class Program {
             string color = values[2].Replace("(", "").Replace(")", "");
 
             instructions.Add((d, value, color));
+        }
+
+        return instructions;
+    }
+
+    public static List<(Direction, long)> ConvertInput(List<(Direction, int, string)> input) {
+        List<(Direction, long)> instructions = new();
+
+        foreach (var (_, _, hex) in input) {
+            Direction d = (Direction)(int)char.GetNumericValue(hex[6]);
+            long value = Convert.ToInt64(hex.Substring(1, 5), 16);
+
+            instructions.Add((d, value));
         }
 
         return instructions;
@@ -105,6 +123,41 @@ public class Program {
         }
 
         return (grid, maxy, 0 - minx);
+    }
+
+    private static long CalculateArea(List<(Direction, long)> instructions) {
+        long area = 0;
+
+        // Calculate the area using Shoelace formula
+        long curx = 0, cury = 0;
+        long nextx = 0, nexty = 0;
+        long pathSize = 0;
+        
+        // Start from 2nd point.
+        for (int i = 0; i <  instructions.Count; i++) {
+            var instruction = instructions[i];
+
+            // find next point
+            nextx = curx + DirectionMap[instruction.Item1].Item1 * instruction.Item2;
+            nexty = cury + DirectionMap[instruction.Item1].Item2 * instruction.Item2;
+            
+            pathSize += instruction.Item2;
+
+            // Double the area
+            area += (nextx - curx) * (cury + nexty);
+
+            curx = nextx;
+            cury = nexty;    
+        }
+
+        // Last point to first point
+        area  += (0 - curx)*(cury + 0);
+        pathSize += cury;
+
+        // half the area + half path size + 1;
+        area = area / 2 + pathSize / 2 + 1;
+
+        return area;
     }
 
     private class GridSolver {
